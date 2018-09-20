@@ -51,7 +51,7 @@ def calculate_fibo(n:int):
         return fibo
     else:
         fibo= [1,1]
-        while len(fibo) <= n:
+        while len(fibo) < n:
             fl = len(fibo)
             v1 = fibo[fl-1]
             v2 = fibo[fl-2]
