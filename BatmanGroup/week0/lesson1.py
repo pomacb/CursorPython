@@ -41,3 +41,20 @@ print(create_dict('Denis', 26, 'Books'))
 
 #Advanced Level
 #Task1
+def calculate_fibo(n:int):
+    fibo = []
+    if n == 0:
+        fibo = [1]
+        return fibo
+    elif n == 1:
+        fibo= [1,1]
+        return fibo
+    else:
+        fibo= [1,1]
+        while len(fibo) <= n:
+            fl = len(fibo)
+            v1 = fibo[fl-1]
+            v2 = fibo[fl-2]
+            fibo.append(v1+v2)
+        return fibo
+print (calculate_fibo(10))
