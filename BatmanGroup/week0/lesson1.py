@@ -40,21 +40,47 @@ def create_dict(name:str, age:int, hobby:str):
 print(create_dict('Denis', 26, 'Books'))
 
 #Advanced Level
-#Task1
+#Fibonacci
 def calculate_fibo(n:int):
     fibo = []
     if n == 0:
-        fibo = [1]
         return fibo
     elif n == 1:
-        fibo= [1,1]
+        fibo= [0]
         return fibo
     else:
-        fibo= [1,1]
+        fibo= [0,1]
         while len(fibo) < n:
-            fl = len(fibo)
-            v1 = fibo[fl-1]
-            v2 = fibo[fl-2]
-            fibo.append(v1+v2)
+            fibo.append(fibo[len(fibo)-1]+fibo[len(fibo)-2])
         return fibo
+
+
 print (calculate_fibo(10))
+
+#Matrix
+
+def create_matrix(fe:int, rows:int, col:int):
+
+    #calculate first and last row
+    max_lenght=len(str(fe+(rows*col-1)));
+    fl_row =('#'*max_lenght*col)+'#'*((col-1)+3);
+
+    #create bare matrix
+    matrix=[]
+    for r in range(rows):
+        row_list=[]
+        for i in range(col):
+            row_list.append(fe)
+            fe+=1
+        matrix.append(row_list)
+
+    #print beautiful matrix
+    print(fl_row)
+    for m in matrix:
+        str1 = ''
+        for l in m:
+            str1 += ' '*(max_lenght-len(str(l)))+str(l)+' '
+        print('#' + str1 + '#')
+    print(fl_row)
+
+create_matrix(1000,10,10)
