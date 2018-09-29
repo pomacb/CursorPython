@@ -10,9 +10,7 @@ set1 = set(list1); print(set1)
 
 #task2_4
 def compare_elements(a:list, b:set):
-    list_len = len(a)
-    set_len = len(b)
-    if list_len > set_len:
+    if len(a) > len(b):
         print ('List is bigger!')
     else:
         print ('Set is bigger!')
@@ -83,4 +81,4 @@ def create_matrix(fe:int, rows:int, col:int):
         print('#' + str1 + '#')
     print(fl_row)
 
-create_matrix(1000,10,10)
+create_matrix(40,5,5)
