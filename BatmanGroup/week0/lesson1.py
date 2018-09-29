@@ -22,24 +22,21 @@ def get_value_from_list(data:list, index:int):
     try:
         return data[index]
     except IndexError:
-       return None
+       pass
 
 print(get_value_from_list(list1,5))
 print(get_value_from_list(list1,25))
 
-#task4
-my_dict = {"Name": "", "Age":"", "Hobby":""}
-def create_dict(name:str, age:int, hobby:str):
-    my_dict['Name'] = name
-    my_dict['Age'] = age
-    my_dict['Hobby'] = hobby
-    return my_dict
+# task4
+def create_dict(name: str, age: int, hobby: str) -> dict:
+    return {'Name': name, 'Age': age, 'Hobby': hobby}
+
 
 print(create_dict('Denis', 26, 'Books'))
 
-#Advanced Level
-#Fibonacci
-def calculate_fibo(n:int):
+# Advanced Level
+# Fibonacci
+def calculate_fibo(n: int) -> list:
     fibo = []
     if n == 0:
         return fibo
@@ -47,7 +44,7 @@ def calculate_fibo(n:int):
         fibo= [0]
         return fibo
     else:
-        fibo= [0,1]
+        fibo= [0, 1]
         while len(fibo) < n:
             fibo.append(fibo[len(fibo)-1]+fibo[len(fibo)-2])
         return fibo
