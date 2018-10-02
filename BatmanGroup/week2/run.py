@@ -1,5 +1,6 @@
 from functools import reduce
 
+
 members = [
   {'age': 43, 'name': 'Denis'},
   {'age': 49, 'name': 'Roman'},
@@ -12,26 +13,24 @@ members = [
   {'age': 83, 'name': 'Homer'}
 ]
 
-
-def upmembers(l: list) -> list:
-    l = [{k: (v.upper() if k == 'name' else v) for (k, v) in d.items()} for d in members]
-    return l
-
-
+# def addload(d: dict)-> dict:
+#     d['load'] = d['age']*100/200
 # def upmembers2(l: list) -> list:
-#     l = [dict(zip(d.keys(), list(map(lambda d: d['name'].upper(), members)))) for d in members]
+#     l = [d for d in members]
 #     return l
+
+
+#l = [d['load']:d['age']*100/200 for d in members]
 
 
 if __name__ == "__main__":
     print(upmembers(members))
 
 
+    # my = {'age': 43, 'name': 'Denis'}
+    #
+    #
+    # my['load'] = my['age']*100/200
+    # print(my)
 
-
-    # print(list(map(lambda x: x['name'].upper(), members)))
-    # for i in members:
-    #     for key in i.items():
-    #         i['name'] = i['name'].upper()
-    # print(members)
 
