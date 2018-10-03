@@ -1,7 +1,8 @@
-from functools import reduce
 from utils.task2 import upmembers
 from utils.task3 import filtered_List
 from utils.task4 import with_O
+from utils.task5 import print_values
+
 
 members = [
   {'age': 43, 'name': 'Denis'},
@@ -19,3 +20,4 @@ if __name__ == "__main__":
     print(upmembers(members))
     print(filtered_List(members))
     print(with_O(members))
+    print(print_values(members))
