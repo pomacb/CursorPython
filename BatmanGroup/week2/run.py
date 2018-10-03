@@ -19,5 +19,3 @@ if __name__ == "__main__":
     print(upmembers(members))
     print(filtered_List(members))
     print(with_O(members))
-
-
