@@ -1,6 +1,6 @@
 from utils.task1 import create_dirs, create_files, pretty_print
 from utils.task2 import csv_file
-
+from utils.task3 import save_pic
 
 # some data for input -> task1
 dir2create = ['demo_dir1', 'demo_dir2/demo_dir3', 'demo_dir4/demo_dir5/demo_dir6']
@@ -28,3 +28,5 @@ if __name__ == "__main__":
     pretty_print('/tmp/demo')
 
     csv_file('file.csv', group_members)
+
+    save_pic('https://dummyimage.com/600x400/000/fff', 'mypic.png')
