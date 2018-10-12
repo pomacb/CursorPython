@@ -2,6 +2,7 @@ class Developer():
     def __init__(self, years_experience: int, name: str, language=''):
         self.years_experience = years_experience
         self.name = name
+        self.language = language
 
     def about(self):
         if self.years_experience <= 3:
@@ -13,6 +14,12 @@ class Developer():
 
     def write_code(self):
         return "I am a developer and I write code"
+
+    def __str__(self):
+        return f"{self.name} - {self.years_experience} years, {self.language}"
+
+    def __call__(self, *args, **kwargs):
+        return self.write_code()
 
 
 class Python(Developer):
