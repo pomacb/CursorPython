@@ -4,7 +4,11 @@ import flask
 from flask import Flask
 from flask import request
 
-from settings import PORT, HOST
+# Load settings from json file to local variable
+our_data = json.load(open("settings.json", "r"))
+HOST = our_data['host']
+PORT = our_data['port']
+DEBUG = our_data['debug']
 
 app = Flask(__name__)
 
@@ -17,8 +21,8 @@ def check_member(name: str) -> bool:
     return name in MEMBERS.keys()
 
 
-@app.route('/user', methods=['POST'])
-@app.route('/user/<name>', methods=['GET', 'PATCH', 'DELETE'])
+@app.route('/users', methods=['POST'])
+@app.route('/users/<name>', methods=['GET', 'PATCH', 'DELETE'])
 def profile(name: str):
     result = {}
 
@@ -53,5 +57,12 @@ def profile(name: str):
     return json.dumps(result)
 
 
+@app.route('/users/dump', methods=['POST'])
+def dump2file():
+    with open('dump.json', 'w') as outfile:
+        json.dump(MEMBERS, outfile)
+        result = {"status": "Ok", "message": f"Users' dump was saved to the file"}
+    return json.dumps(result)
+
 if __name__ == '__main__':
-    app.run(port=PORT, host=HOST, debug=True)
+    app.run(port=PORT, host=HOST, debug=DEBUG)
