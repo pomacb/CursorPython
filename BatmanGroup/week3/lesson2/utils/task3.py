@@ -21,7 +21,7 @@ class Employees:
 
         def fire_multi_emp():
             for empl in list2analize:
-                print(f"{list2analize.index(empl)}, {empl.name} - {empl.years_experience} years, {empl.language}")
+                print(f"Index: {list2analize.index(empl)}, {empl.name} - {empl.years_experience} years, {empl.language}")
             try:
                 i = int(input("Choose index who should be fired:"))
                 assert i in range(0, len(list2analize))
