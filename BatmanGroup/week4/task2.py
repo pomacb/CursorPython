@@ -15,8 +15,11 @@ def response(name, method):
     if method == 'add_member':
         response_data["result"] = f"We add your member {MEMBERS.get(name)}"
         return json.dumps(response_data)
-    else:
+    elif method == 'get_member':
         response_data["result"] = f"Member info: {MEMBERS.get(name)}"
+        return json.dumps(response_data)
+    else:
+        response_data["result"] = "Ping successful!"
         return json.dumps(response_data)
 
 
@@ -44,6 +47,11 @@ def handle():
 
     result = method_view(**data.get("params"))
     return result
+
+
+@app.route('/ping', methods=['POST'])
+def ping_server():
+    return response("", "ping_server")
 
 
 if __name__ == '__main__':
