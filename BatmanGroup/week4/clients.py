@@ -10,7 +10,7 @@ def server_checks():
                "params": {
                    "name": "Petya"
                }
-             }
+            }
     r = requests.post(url, data=json.dumps(data))
     if re.match('2', str(r.status_code)):
         print("Your server is alive")
@@ -23,7 +23,4 @@ def server_checks():
 
 
 if __name__ == '__main__':
-    try:
-        server_checks()
-    except ConnectionRefusedError:
-        pass
+    server_checks()
