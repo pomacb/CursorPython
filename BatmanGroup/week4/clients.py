@@ -23,7 +23,4 @@ def server_checks():
 
 
 if __name__ == '__main__':
-    try:
-        server_checks()
-    except ConnectionRefusedError:
-        pass
+    server_checks()
