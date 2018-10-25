@@ -1,7 +1,7 @@
 from flask import Flask
 
-from getinfo.getinfo import bpinfo
-from moddata.moddata import bpmod
+from factory.api.getinfo import bpinfo
+from factory.api.moddata import bpmod
 from factory.config import runtime_config
 
 

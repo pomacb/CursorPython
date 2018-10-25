@@ -6,7 +6,7 @@ from flask import current_app
 
 class Footballers(MethodView):
     def get(self):
-        db = current_app.config
+        db = current_app.config.get('DB')
         args = request.args
         if not args:
             return jsonify(db)

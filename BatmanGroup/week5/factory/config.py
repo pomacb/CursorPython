@@ -2,11 +2,12 @@ import json
 
 
 class Config:
-    db = {}
+    DB = {}
 
 
 class DevConfig(Config):
-    db = {
+    # env = 'Dev'
+    DB = {
             "Player1": {"Full_name": "Full name Player1", "Age": "20", "Club": "Club1"},
             "Player2": {"Full_name": "Full name Player2", "Age": "20", "Club": "Club2"},
             "Player3": {"Full_name": "Full name Player3", "Age": "20", "Club": "Club3"},
@@ -14,7 +15,8 @@ class DevConfig(Config):
 
 
 class TestConfig(Config):
-    db = {
+    # env = 'Test'
+    DB = {
             "Rooney": {"Full_name": "Wayne Mark Rooney", "Age": "32", "Club": "DC"},
             "Ibrahimovic": {"Full_name": "Zlatan Ibrahimovic", "Age": "37", "Club": "LA Galaxy"},
             "Messi": {"Full_name": "Lionel Messi", "Age": "31", "Club": "Barcelona"},
