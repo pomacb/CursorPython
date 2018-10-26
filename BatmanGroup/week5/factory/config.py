@@ -6,7 +6,6 @@ class Config:
 
 
 class DevConfig(Config):
-    # env = 'Dev'
     DB = {
             "Player1": {"Full_name": "Full name Player1", "Age": "20", "Club": "Club1"},
             "Player2": {"Full_name": "Full name Player2", "Age": "20", "Club": "Club2"},
@@ -15,7 +14,6 @@ class DevConfig(Config):
 
 
 class TestConfig(Config):
-    # env = 'Test'
     DB = {
             "Rooney": {"Full_name": "Wayne Mark Rooney", "Age": "32", "Club": "DC"},
             "Ibrahimovic": {"Full_name": "Zlatan Ibrahimovic", "Age": "37", "Club": "LA Galaxy"},

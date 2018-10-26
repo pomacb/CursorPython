@@ -1,11 +1,11 @@
 from flask import Blueprint, json
 from flask.views import MethodView
-from flask import request
+from flask import request, current_app
 
 
 class ModMembers(MethodView):
     def post(self):
-        from api import db
+        db = current_app.config.get('DB')
         data = json.loads(request.data)
         if not data:
             return f"Please, specify footballer info to be added as data"
@@ -15,7 +15,7 @@ class ModMembers(MethodView):
                 return f"Footballer {key} successfully added"
 
     def delete(self):
-        from api import db
+        db = current_app.config.get('DB')
         args = request.args
         if not args:
             return f"Please, specify surname to be deleted as a parameter"
