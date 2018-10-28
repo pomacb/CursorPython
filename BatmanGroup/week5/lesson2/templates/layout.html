@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <title>Jinja lesson | {% block title %}{% endblock %}</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="static/layout.css" type="text/css">
+</head>
+<body>
+<div class="wrapper row1">
+  <header id="header" class="clear">
+    <div id="hgroup">
+      <h1><a href="/home">Jinja lesson</a></h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="/home">Home</a></li>
+        <li class="last"><a href="/other">Other</a></li>
+      </ul>
+    </nav>
+  </header>
+</div>
+<!-- content -->
+    {% block body %}{% endblock %}
+<!-- Footer -->
+<div class="wrapper row3">
+  <footer id="footer" class="clear">
+    <p class="fl_left">Copyright &copy; 2018 - All Rights Reserved - <a href="#">pomacb</a></p>
+  </footer>
+</div>
+</body>
+</html>
