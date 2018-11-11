@@ -1,21 +1,15 @@
-class BookShell:
+class BookShelf:
 
-    def __init__(self, shell_number: int):
-        self.shell_number = shell_number
-        self.booklist = []
+    def __init__(self, shelf_number: str):
+        self.shelf_number = shelf_number
+        self.booklist = list()
 
     def __add__(self, book: object):
         self.booklist.append(book)
         return self
 
     def description(self):
-        print(f"Book shell #{self.shell_number} has books:\n")
-        print('\n'.join([book.printbook for book in self.booklist]))
-
-
-        # print(f"Book shell #{self.shell_number} has books:")
-        # for book in self.booklist:
-        #     print(f"Title: {book.title}, Author: {book.author}")
+        return f"{self.shelf_number}:\n" + '\n'.join([book.printbook for book in self.booklist])
 
 
 class Book:
