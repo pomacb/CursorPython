@@ -8,10 +8,14 @@ class BookShell:
         self.booklist.append(book)
         return self
 
-    def show(self):
-        print(f"Book shell #{self.shell_number} has books:")
-        for book in self.booklist:
-            print(f"Title: {book.title}, Author: {book.author}")
+    def description(self):
+        print(f"Book shell #{self.shell_number} has books:\n")
+        print('\n'.join([book.printbook for book in self.booklist]))
+
+
+        # print(f"Book shell #{self.shell_number} has books:")
+        # for book in self.booklist:
+        #     print(f"Title: {book.title}, Author: {book.author}")
 
 
 class Book:
@@ -19,3 +23,7 @@ class Book:
     def __init__(self, title: str, author: str):
         self.title = title
         self.author = author
+
+    @property
+    def printbook (self):
+        return f"Title: {self.title}, Author: {self.author}"

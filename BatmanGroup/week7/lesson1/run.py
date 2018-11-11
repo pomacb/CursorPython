@@ -4,7 +4,7 @@ from books import BookShell, Book
 if __name__ == "__main__":
     shell_1 = BookShell(1)
 
-    print(shell_1.show())
+    print(shell_1.description())
 
     book_1 = Book("Memoirs of a Geisha", "Arthur Golden")
     book_2 = Book("A Game of Thrones", "George R.R. Martin")
@@ -15,4 +15,4 @@ if __name__ == "__main__":
     shell_1 += book_3
 
     print(book_1.author)
-    print(shell_1.show())
+    print(shell_1.description())
